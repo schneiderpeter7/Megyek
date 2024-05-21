@@ -101,8 +101,8 @@
     </main>
     <!--Dávid írd át legyszives az optionokre-->
     <script>
-        function loadYear(year) {
-            const url = `@Url.Action("KorabbiEredmeny", "Korabbi")?ev=${year}`;
+        function loadYear(name) {
+            const url = `@Url.Action("KovetkezoNyero", "Kovetkezo")?megye=${name}`;
             window.location.href = url;
         }
     </script>
