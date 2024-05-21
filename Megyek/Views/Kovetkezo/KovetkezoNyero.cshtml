@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@model List<Megyek.Models.Kovetkezo.KiFogNyerniModel>
+@{
+
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -60,7 +65,6 @@
                 </div>
             </div>
         </div>
-
         <div id="table">
             <div id="korabbi_table">
                 <table style="width:100%">
@@ -70,63 +74,37 @@
                         <th>Induló pártja</th>
                         <th>Szavazatot kap (db)</th>
                     </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>is</td>
-                        <td>simply</td>
-                    </tr>
+                   
+                    @if (Model != null)
+                    {
+                        @foreach (var valasztas in Model)
+                        {
+                            foreach (var data in valasztas.data)
+                            {
+                                <tr>
+                                    <td>@data.indulo_neve</td>
+                                    <td>@data.valasztasi_terulet</td>
+                                    <td>@data.partja</td>
+                                    <td>@data.szavazatot_kapott.szazalek</td>
+                                </tr>
+                            }
+                        }
+                    }
+                    }
+                    else
+                    {
+                        <p> Nem ment be a ciklusba </p>
+                    }
                 </table>
             </div>
         </div>
     </main>
+    <!--Dávid írd át legyszives az optionokre-->
+    <script>
+        function loadYear(year) {
+            const url = `@Url.Action("KorabbiEredmeny", "Korabbi")?ev=${year}`;
+            window.location.href = url;
+        }
+    </script>
  </body>
 </html>
