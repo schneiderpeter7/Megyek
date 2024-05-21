@@ -10,28 +10,20 @@ body {
 
 main {
   display: flex;
-  flex-direction: row; /* small screens switxh to column here */
+  flex-direction: column;
   gap: 5rem;
   height: auto;
   margin-bottom: 5rem;
 }
 
-@media (max-width: 1240px) {
-  main {
-    display: flex;
-    flex-direction: column; /* small screens switxh to column here */
-    gap: 5rem;
-    height: auto;
-    margin-bottom: 5rem;
-    align-items: center;
-    justify-content: center;
-  }
+#topContent{
+    display:flex;
+    flex-direction:row;
 }
 
-
 footer p {
-  width: fit-content;
-  margin: auto;
+    width: fit-content;
+    margin: auto;
 }
 
 #left {
