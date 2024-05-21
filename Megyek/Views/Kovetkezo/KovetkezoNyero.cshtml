@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div id="megye_selector">
-                    <select>
+                    <select onchange="loadYear(this.value)">
                         <option value="">Válassz megyét</option>
                         <option value="bacs">Bács-Kiskun megye</option>
                         <option value="baranya">Baranya megye</option>
@@ -89,11 +89,6 @@
                                 </tr>
                             }
                         }
-                    }
-                    }
-                    else
-                    {
-                        <p> Nem ment be a ciklusba </p>
                     }
                 </table>
             </div>
