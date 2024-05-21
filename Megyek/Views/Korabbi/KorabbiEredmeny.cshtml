@@ -34,12 +34,12 @@
                         <span class="circle"></span>
                         <span class="line"></span>
                     </div>
-                </div>
-                <div id="year_selector">
-                <a asp-area ="" asp-controller="Korabbi" asp-action="KorabbiEredmenyek" id="korabbi">2014</a>
-                    <a href="#" id="korabbi">2018</a>
-                    <a href="#" id="korabbi">2022</a>
-                </div>
+                </div
+            </div>
+            <div id="year_selector">
+            <a href="javascript:void(0)" onclick="loadYear(2014)">2014</a>
+            <a href="javascript:void(0)" onclick="loadYear(2018)">2018</a>
+            <a href="javascript:void(0)" onclick="loadYear(2020)">2020</a>
             </div>
         </div>
 
@@ -71,12 +71,20 @@
                             }
                         }
                     }
-                    else
-                    {
-                        <p> nem ment be a ciklusba </p>
-                    }
-                </table>
-            </div>
+
+                }
+                else
+                {
+                    <p> nem ment be a ciklusba </p>
+                }
+            </table>
+        <script>
+            function loadYear(year) {
+                const url = `@Url.Action("KorabbiEredmeny", "Korabbi")?ev=${year}`;
+                window.location.href = url;
+            }
+        </script>
+
         </div>
 
     </main>
