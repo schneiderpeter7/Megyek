@@ -10,23 +10,15 @@ body {
 
 main {
   display: flex;
-  flex-direction: row; /* small screens switxh to column here */
+  flex-direction: column; /* small screens switxh to column here */
   gap: 5rem;
   height: auto;
   margin-bottom: 5rem;
 }
 
-@media (max-width: 1240px) {
-  main {
+#topContent {
     display: flex;
-    flex-direction: column; /* small screens switxh to column here */
-    gap: 5rem;
-    height: auto;
-    margin-bottom: 5rem;
-    align-items: center;
-    justify-content: center;
-    table-layout: auto;
-  }
+    flex-direction: row;
 }
 
 footer p {
