@@ -66,7 +66,12 @@
                                     <td>@valasztas.ev</td>
                                     <td>@data.indulo_neve</td>
                                     <td>@data.orszagos_lista</td>
-                                    <td>@data.partja</td>
+                                    <td>
+                                        @{
+                                            var base64Partja = new Base64Encoder().Encode(data.partja);
+                                        }
+                                        <a href="@Url.Action("Part", "part")?part=@base64Partja">@data.partja</a>
+                                    </td>
                                     <td>@data.szavazatot_kapott.darab (@data.szavazatot_kapott.szazalek)</td>
                                     <td>@(data.nyert ? "Igen" : "Nem")</td>
                                 </tr>

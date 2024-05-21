@@ -10,7 +10,7 @@ body {
 
 main {
   display: flex;
-  flex-direction: column; /* small screens switxh to column here */
+  flex-direction: column;
   gap: 5rem;
   height: auto;
   margin-bottom: 5rem;
@@ -126,21 +126,19 @@ th, td {
 }
 
 tr td, tr th {
-  border-right: 3px solid #eaeade; /* Inner vertical lines */
-  border-bottom: 3px solid #eaeade; /* Inner horizontal lines */
+  border-right: 3px solid #eaeade;
+  border-bottom: 3px solid #eaeade;
 }
 
 tr th {
-  border-bottom: 6px solid #eaeade; /* Extra thick bottom border for header */
+  border-bottom: 6px solid #eaeade;
   font-size: 1.2rem;
 }
 
-/* Remove right border from the last cell in each row */
 tr td:last-child, tr th:last-child {
   border-right: none;
 }
 
-/* Remove bottom border from the last row's cells */
 tr:last-child td, tr:last-child th {
   border-bottom: none;
 }
