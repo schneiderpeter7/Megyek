@@ -1,0 +1,79 @@
+﻿
+@{
+    
+}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internetes alkalamzás fejlesztés I. II. 2023/24/2</title>
+    <link rel="stylesheet" href="~/css/korabbi.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          rel="stylesheet" />
+</head>
+    <main>
+        <div id="left">
+            <h1>
+                Korábbi választási <br />
+                eredmények
+            </h1>
+            <h2>Eredmények 2014 - 2022 között</h2>
+        </div>
+
+        <div id="right">
+            <div id="year_title">
+                2022
+            </div>
+            <div class="head">
+                <div class="lines">
+                    <span class="line"></span>
+                    <span class="circle"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div id="year_selector">
+            <a asp-area ="" asp-controller="Korabbi" asp-action="KorabbiEredmenyek" id="korabbi">2014</a>
+                <a href="#" id="korabbi">2018</a>
+                <a href="#" id="korabbi">2022</a>
+            </div>
+        </div>
+
+    </main>
+    <div id="table">
+        <div id="korabbi_table">
+            <table style="width:100%">
+                <tr>
+                    <th>Induló neve</th>
+                    <th>Megye</th>
+                    <th>Induló pártja</th>
+                    <th>Országos listája</th>
+                    <th>Szavazatot kapott</th>
+                    <th>Nyert?</th>
+                </tr>
+                @if (Model != null)
+                {
+                    @foreach (var valasztas in Model)
+                    {
+                        foreach (var data in valasztas.data)
+                        {
+                            <tr>
+                                <td>@valasztas.ev</td>
+                                <td>@data.indulo_neve</td>
+                                <td>@data.orszagos_lista</td>
+                                <td>@data.partja</td>
+                                <td>@data.szavazatot_kapott.darab (@data.szavazatot_kapott.szazalek)</td>
+                                <td>@(data.nyert ? "Igen" : "Nem")</td>
+                            </tr>
+                        }
+                    }
+                }
+                else
+                {
+                    <p> nem ment be a ciklusba </p>
+                }
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inria Serif", serif;
+}
+
+body {
+  background-color: #eaeade;
+}
+
+main {
+  display: flex;
+  flex-direction: row; /* small screens switxh to column here */
+  gap: 5rem;
+  height: auto;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 1240px) {
+  main {
+    display: flex;
+    flex-direction: column; /* small screens switxh to column here */
+    gap: 5rem;
+    height: auto;
+    margin-bottom: 5rem;
+    align-items: center;
+    justify-content: center;
+    table-layout: auto;
+  }
+}
+
+footer p {
+  width: fit-content;
+  margin: auto;
+}
+
+#left {
+  margin-left: 5rem;
+  width: 100%;
+}
+
+@media (max-width: 1240px) {
+  #left {
+    margin-left: 0;
+    width: auto;
+  }
+}
+
+#left h1 {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media (max-width: 1240px) {
+  #left h1 {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+  
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+  }
+
+  #left h2 {
+    text-align: center;
+  }
+}
+
+#left h2 {
+  margin-bottom: 5rem;
+}
+
+#right {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 65em;
+  margin-top: 5em;
+  margin-bottom: auto;
+  margin-right: 0;
+  background-color: #729a94;
+  border-radius: 1rem 0 0 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  text-align: center;
+  box-shadow: 0px 3px 15px 1px #9c9c9c;
+}
+
+@media (max-width: 1240px) {
+  #right {
+    margin-top: 0;
+    margin-bottom: auto;
+    margin-right: 0;
+    padding-bottom: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    width: 35rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  #right {
+    width: 20rem;
+  }
+}
+
+
+#right h1 {
+  font-size: 3rem;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid transparent;
+  table-layout: auto;
+}
+
+
+#table table {
+  table-layout: auto;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr td, tr th {
+  border-right: 3px solid #eaeade; /* Inner vertical lines */
+  border-bottom: 3px solid #eaeade; /* Inner horizontal lines */
+}
+
+tr th {
+  border-bottom: 6px solid #eaeade; /* Extra thick bottom border for header */
+  font-size: 1.2rem;
+}
+
+/* Remove right border from the last cell in each row */
+tr td:last-child, tr th:last-child {
+  border-right: none;
+}
+
+/* Remove bottom border from the last row's cells */
+tr:last-child td, tr:last-child th {
+  border-bottom: none;
+}
+
+#korabbi_table {
+  display: flex;
+  flex-direction: row;
+
+  gap: 1rem;
+  margin-right: 2.2em;
+  margin-left: 2.2em;
+  padding: 2rem 3rem 2rem 3rem;
+
+  overflow-x: auto;
+
+  color: #eaeade;
+  background-color: #aabaa8;
+  border-radius: 1rem;
+
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#part_table {
+  display: flex;
+  flex-direction: row;
+
+  overflow-x: auto;
+
+  gap: 1rem;
+  color: #eaeade;
+  border-radius: 1rem;
+
+  font-size: 1.2rem;
+  text-align: center;
+}

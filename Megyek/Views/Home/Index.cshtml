@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internetes alkalamzás fejlesztés I. II. 2023/24/2</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          rel="stylesheet" />
+</head>
+<body>
+    <main>
+        <div id="left">
+            <h1>
+                Internetes alkalmazás <br />
+                fejlesztés I. II.
+            </h1>
+            <h2>2023/24/2 csoportmunka</h2>
+            <p id="deschead">Feladat leírás:</p>
+            <p id="desc">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+                reiciendis eius, a neque dignissimos ducimus laborum impedit quod rem
+                ullam tempore tempora? Reprehenderit, mollitia. Quod magni blanditiis
+                quam saepe ex ipsa perspiciatis soluta eos enim voluptatibus a cumque
+                dolore praesentium eaque commodi ea sed tenetur corrupti maxime,
+                expedita quos explicabo!
+            </p>
+        </div>
+
+        <div id="right">
+            <a asp-area="" asp-controller="Korabbi" asp-action="KorabbiEredmeny">Korábbi eredmények</a>
+            <a asp-area="" asp-controller="Part" asp-action="Part">Utolsó választási eredmények</a>
+            <a asp-area="" asp-controller="Kovetkezo" asp-action="KovetkezoNyero">Ki nyeri a következő választást?</a>
+            <a asp-area="" asp-controller="Csapatok" asp-action="Csapatok" id="csoportok">Csoportok és tagok</a>
+        </div>
+    </main>
+</body>
+</html>
+
