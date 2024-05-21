@@ -18,7 +18,7 @@ main {
 
 #topContent {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 footer p {
