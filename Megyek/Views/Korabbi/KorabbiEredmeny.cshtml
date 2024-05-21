@@ -2,6 +2,8 @@
 @{
     
 }
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
           rel="stylesheet" />
 </head>
+<body>
     <main>
         <div id="topContent">
             <div id="left">
@@ -25,21 +28,19 @@
             </div>
 
             <div id="right">
-                <div id="year_title">
-                    2022
-                </div>
+                <p id="year_title">Évek</p>
                 <div class="head">
                     <div class="lines">
                         <span class="line"></span>
                         <span class="circle"></span>
                         <span class="line"></span>
                     </div>
-                </div
-            </div>
-            <div id="year_selector">
-            <a href="javascript:void(0)" onclick="loadYear(2014)">2014</a>
-            <a href="javascript:void(0)" onclick="loadYear(2018)">2018</a>
-            <a href="javascript:void(0)" onclick="loadYear(2020)">2020</a>
+                </div>
+                <div id="year_selector">
+                    <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2014)">2014</a>
+                    <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2018)">2018</a>
+                    <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2020)">2020</a>
+                </div>
             </div>
         </div>
 
@@ -54,6 +55,7 @@
                         <th>Szavazatot kapott</th>
                         <th>Nyert?</th>
                     </tr>
+
                     @if (Model != null)
                     {
                         @foreach (var valasztas in Model)
@@ -71,20 +73,17 @@
                             }
                         }
                     }
-
-                }
-                else
-                {
-                    <p> nem ment be a ciklusba </p>
-                }
             </table>
-        <script>
-            function loadYear(year) {
-                const url = `@Url.Action("KorabbiEredmeny", "Korabbi")?ev=${year}`;
-                window.location.href = url;
-            }
-        </script>
-
+            </div>
         </div>
-
     </main>
+
+    <script>
+        function loadYear(year) {
+            const url = `@Url.Action("KorabbiEredmeny", "Korabbi")?ev=${year}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+                                    
