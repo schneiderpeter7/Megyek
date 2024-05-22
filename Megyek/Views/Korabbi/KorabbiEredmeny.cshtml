@@ -48,6 +48,7 @@
             <div id="korabbi_table">
                 <table style="width:100%">
                     <tr>
+                        <th>Év</th>
                         <th>Induló neve</th>
                         <th>Választási terület</th>
                         <th>Országos listája</th>
@@ -62,6 +63,7 @@
                             foreach (var data in valasztas.data)
                             {
                                 <tr>
+                                    <td>@valasztas.ev</td>
                                     <td>@data.indulo_neve</td>
                                     <td>@data.valasztokerulet</td>
                                     <td>

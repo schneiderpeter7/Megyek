@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Megyek.Models.Utolso.UtolsoValasztasModel>
 @{
 }
 <head>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div id="megye_selector">
-                    <select>
+                <select onchange="LoadKovetkezo(this.value)">
                         <option value="">Válassz megyét</option>
                         <option value="bacs">Bács-Kiskun megye</option>
                         <option value="baranya">Baranya megye</option>
@@ -62,72 +62,39 @@
             </div>
         </div>
 
-    </main>
-    <div id="table">
-        <div id="korabbi_table">
-            <table style="width:100%">
-                <tr>
-                    <th>Induló neve</th>
-                    <th>Terület</th>
-                    <th>Induló pártja</th>
-                    <th>Szavazatot kap (db)</th>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>is</td>
-                    <td>simply</td>
-                </tr>
-            </table>
+        <div id="table">
+            <div id="korabbi_table">
+                <table style="width:100%">
+                    <tr>
+                        <th>Választó kerület</th>
+                        <th>Induló neve</th>
+                        <th>Országos listája</th>
+                        <th>Szavazatot kap (db)</th>
+                        <th>Nyert?</th>
+                    </tr>
+                    @if (Model != null)
+                    {
+                        @foreach (var valasztas in Model)
+                        {
+                            foreach (var data in valasztas.data){
+                                <tr>
+                                    <td>@valasztas.valasztokerulet</td>
+                                    <td>@data.indulo_neve</td>
+                                    <td>@data.orszagoslistaja</td>
+                                    <td>@data.szavazatot_kapott.darab (@data.szavazatot_kapott.szazalek)</td>
+                                    <td>@data.nyert</td>
+                                </tr>
+                            }
+                        }
+                    }
+                </table>
+            </div>
         </div>
-    </div>
-   
 
+        <script>
+            function LoadKovetkezo(name) {
+                const url = `@Url.Action("Utolso", "utolso")?megye=${name}`;
+                window.location.href = url;
+            }
+        </script>
+    </main>
