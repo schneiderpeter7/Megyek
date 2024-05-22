@@ -17,7 +17,7 @@
             return $"{_url}/Part?part={part}";
         }
         public string GetUtolso(string megye) {
-            return $"{_url}/Kovetkezo?megye={megye}";
+            return $"{_url}/Utolso?megye={megye}";
         }
     }
 }

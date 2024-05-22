@@ -1,5 +1,4 @@
-﻿using Megyek.Models.Korabbi;
-using Megyek.Models.Kovetkezo;
+﻿using Megyek.Models.Kovetkezo;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
