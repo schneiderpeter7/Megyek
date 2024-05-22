@@ -39,7 +39,7 @@
                 <div id="year_selector">
                     <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2014)">2014</a>
                     <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2018)">2018</a>
-                    <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2020)">2020</a>
+                    <a href="javascript:void(0)" id="korabbi" onclick="loadYear(2022)">2020</a>
                 </div>
             </div>
         </div>
@@ -48,9 +48,9 @@
             <div id="korabbi_table">
                 <table style="width:100%">
                     <tr>
+                        <th>Év</th>
                         <th>Induló neve</th>
-                        <th>Megye</th>
-                        <th>Induló pártja</th>
+                        <th>Választási terület</th>
                         <th>Országos listája</th>
                         <th>Szavazatot kapott</th>
                         <th>Nyert?</th>
@@ -65,12 +65,12 @@
                                 <tr>
                                     <td>@valasztas.ev</td>
                                     <td>@data.indulo_neve</td>
-                                    <td>@data.orszagos_lista</td>
+                                    <td>@data.valasztokerulet</td>
                                     <td>
                                         @{
-                                            var base64Partja = new Base64Encoder().Encode(data.partja);
+                                            var base64Partja = new Base64Encoder().Encode(data.orszagoslista);
                                         }
-                                        <a href="@Url.Action("Part", "part")?part=@base64Partja">@data.partja</a>
+                                        <a href="@Url.Action("Part", "part")?part=@base64Partja">@data.orszagoslista</a>
                                     </td>
                                     <td>@data.szavazatot_kapott.darab (@data.szavazatot_kapott.szazalek)</td>
                                     <td>@(data.nyert ? "Igen" : "Nem")</td>

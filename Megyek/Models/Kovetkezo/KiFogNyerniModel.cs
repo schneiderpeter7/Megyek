@@ -2,7 +2,7 @@
 {
     public class KiFogNyerniModel
     {
-        public string megye { get; set; }
+        public string valasztasikerulet { get; set; }
         public List<KiFogNyerniInduloModel> data { get; set; }
     }
 }

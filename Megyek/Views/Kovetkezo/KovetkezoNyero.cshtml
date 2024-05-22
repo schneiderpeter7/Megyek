@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div id="megye_selector">
-                    <select onchange="loadYear(this.value)">
+                    <select onchange="LoadKovetkezo(this.value)">
                         <option value="">Válassz megyét</option>
                         <option value="bacs">Bács-Kiskun megye</option>
                         <option value="baranya">Baranya megye</option>
@@ -69,8 +69,10 @@
             <div id="korabbi_table">
                 <table style="width:100%">
                     <tr>
-                        <th>Terület</th>
-                        <th>Induló pártja</th>
+                        <th>Indulo neve</th>
+                        <th>Választási terület</th>
+                        <th>Oszágos lista</th>
+                        <th>Szavazatot kapott</th>
                     </tr>
                     @if (Model != null)
                     {
@@ -79,8 +81,10 @@
                             foreach (var data in valasztas.data)
                             {
                                 <tr>
-                                    <td>@data.valasztasi_terulet</td>
-                                    <td>@data.partja</td>
+                                    <td>@data.indulo_neve</td>
+                                    <td>@valasztas.valasztasikerulet</td>
+                                    <td>@data.orszagoslista</td>
+                                    <td>@data.szavazatot_kapott.darab (@data.szavazatot_kapott.szazalek)</td>
                                 </tr>
                             }
                         }
@@ -89,9 +93,8 @@
             </div>
         </div>
     </main>
-    <!--Dávid írd át legyszives az optionokre-->
     <script>
-        function loadYear(name) {
+        function LoadKovetkezo(name) {
             const url = `@Url.Action("KovetkezoNyero", "Kovetkezo")?megye=${name}`;
             window.location.href = url;
         }

@@ -1,8 +1,8 @@
-﻿namespace Megyek_API.Models
+﻿namespace Megyek.Models.Utolso
 {
     public class UtolsoValasztasModel
     {
-        public string megye { get; set; }
+        public string valasztokerulet { get; set; }
         public List<UtolsoValasztasInduloModel> data { get; set; }
     }
 }
