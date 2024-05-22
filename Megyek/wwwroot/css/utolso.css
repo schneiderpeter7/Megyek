@@ -10,22 +10,15 @@ body {
 
 main {
   display: flex;
-  flex-direction: row; /* small screens switxh to column here */
+  flex-direction: column; 
   gap: 5rem;
   height: auto;
   margin-bottom: 5rem;
 }
 
-@media (max-width: 1240px) {
-  main {
-    display: flex;
-    flex-direction: column; /* small screens switxh to column here */
-    gap: 5rem;
-    height: auto;
-    margin-bottom: 5rem;
-    align-items: center;
-    justify-content: center;
-  }
+#topContent{
+    display:flex;
+    flex-direction:row
 }
 
 footer p {
@@ -114,7 +107,6 @@ footer p {
 }
 
 #right .head .lines {
-  /* background-color: #fafafa; */
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -173,14 +165,10 @@ footer p {
 #right #title_holder {
   width: 100%;
   margin-top: 1rem;
-  /* background-color: #ffffff; */
   margin-top: 1rem;
 }
 
 #right #title_holder #megye_title {
-  /* padding-right: 5rem;
-  padding-left: 5rem; */
-  /* margin-bottom: 1rem; */
   color: #eaeade;
   
   border-radius: 1rem;
@@ -204,12 +192,7 @@ footer p {
 
 
 #right #megye_selector {
-  /* background-color: #eaeade; */
-  /* margin-left: auto;
-  margin-right: auto; */
   display: inline;
-  /* padding-left: 3rem;
-  padding-right: 3rem; */
 }
 
 #right #megye_selector select {
@@ -221,13 +204,10 @@ footer p {
   font-weight: bold;
   text-decoration: none;
   width: 100%;
-  /* margin-left: 1rem;
-  margin-right: 1rem; */
   box-shadow: 0px 3px 15px 1px #2b2b2b;
 
 }
 
-/* Optionally, style the dropdown arrow */
 #right #megye_selector select {
   position: relative;
 }
@@ -251,21 +231,19 @@ th, td {
 }
 
 tr td, tr th {
-  border-right: 3px solid #eaeade; /* Inner vertical lines */
-  border-bottom: 3px solid #eaeade; /* Inner horizontal lines */
+  border-right: 3px solid #eaeade; 
+  border-bottom: 3px solid #eaeade; 
 }
 
 tr th {
-  border-bottom: 6px solid #eaeade; /* Extra thick bottom border for header */
+  border-bottom: 6px solid #eaeade; 
   font-size: 1.2rem;
 }
 
-/* Remove right border from the last cell in each row */
 tr td:last-child, tr th:last-child {
   border-right: none;
 }
 
-/* Remove bottom border from the last row's cells */
 tr:last-child td, tr:last-child th {
   border-bottom: none;
 }
@@ -276,8 +254,6 @@ tr:last-child td, tr:last-child th {
 
   overflow-x: auto;
 
-  /* width: 100%; */
-  /* margin: auto; */
   gap: 1rem;
   margin-right: 2.2em;
   margin-left: 2.2em;
