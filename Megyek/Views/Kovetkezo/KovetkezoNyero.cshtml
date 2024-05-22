@@ -69,10 +69,8 @@
             <div id="korabbi_table">
                 <table style="width:100%">
                     <tr>
-                        <th>Induló neve</th>
                         <th>Terület</th>
                         <th>Induló pártja</th>
-                        <th>Szavazatot kap (db)</th>
                     </tr>
                    
                     @if (Model != null)
@@ -82,10 +80,8 @@
                             foreach (var data in valasztas.data)
                             {
                                 <tr>
-                                    <td>@data.indulo_neve</td>
                                     <td>@data.valasztasi_terulet</td>
                                     <td>@data.partja</td>
-                                    <td>@data.szavazatot_kapott.szazalek</td>
                                 </tr>
                             }
                         }
