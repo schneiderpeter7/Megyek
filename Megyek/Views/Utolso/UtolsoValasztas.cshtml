@@ -92,8 +92,8 @@
         </div>
 
         <script>
-            function LoadKovetkezo(name) {
-                const url = `@Url.Action("Utolso", "utolso")?megye=${name}`;
+        function LoadKovetkezo(valasztokerulet) {
+            const url = `@Url.Action("UtolsoValasztas", "Utolso")?valasztokerulet=${valasztokerulet}`;
                 window.location.href = url;
             }
         </script>
