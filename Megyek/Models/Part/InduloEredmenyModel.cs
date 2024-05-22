@@ -1,4 +1,4 @@
-﻿namespace Megyek_API.Models
+﻿namespace Megyek.Models.Part
 {
     public class InduloEredmenyModel
     {
